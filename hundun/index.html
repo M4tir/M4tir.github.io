@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html">
+  
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"ffbf106a9e","applicationID":"150210255","transactionName":"elhYREcNDllXRxZFXVhFVVgaCwxRV00=","queueTime":0,"applicationTime":21,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"ffbf106a9e",applicationID:"150210255"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+  <title>混沌之眼Eyes of chaos 网络空间搜索引擎</title>
+      <meta name="keywords" content="网络空间,态势感知,网络安全,搜索引擎,工控安全,漏洞分析,全网搜索,端口扫描,空间测绘,安全大数据">
+    <meta name="description" content="Eyes of chaos 是Mstir汇推出的一款网络空间搜索引擎，它通过进行网络空间测绘，能够帮助研究人员或者企业迅速进行网络资产匹配，例如进行漏洞影响范围分析、应用分布统计、应用流行度排名统计等。">
+
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="JIui9PcAdryyc+rv0agbftl0SSYtHqGtd4K3CVctDycQI48QBv8gcBQ9UhZNUGvFI9b2Rxnts6VZwCX/Ij0nIw==">
+  <script>
+//<![CDATA[
+
+//]]>
+</script>
+  <link rel="stylesheet" media="all" href="assets/fofa/skin1/fofa-588d4fd7d3a96bc008b6c3a2196.css" data-turbolinks-track="reload">
+  <script src="assets/fofa/fofa-e484b1954fe4fc3f4766f2f1dcb.js" data-turbolinks-track="reload"></script>
+  <script src="js/layer/layer.js"></script>
+  
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?9490413c5eebdadf757c2be2c816aedf ";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</head>
+
+<body>
+    <!-- houdoudou -->
+
+
+
+<script type="text/javascript">
+  $(function(){
+    $('.feedback-btn').on('click', function() {
+      $.get("/feedbacks/new", {}, function(){
+
+      }, "script")
+    })
+
+    $(document).on('click', '.feed-close', function() {
+      $('.feedback-pop-up').hide();
+      $('.modal-backdrop').hide();
+    })
+  })
+
+</script>
+
+  <div class="container" id="header">
+  <div class="top top_line">
+  <div class="container">
+  <div class="row ">
+    <div class="col-lg-8 col-md-8 text-left"><img src="imgs/skin1/logo.png" alt="" width="25%" height="25%"><a href=""></a></div>
+      <div class="menu"><ul>
+		<li><a href="http://m4tir.github.io/">My'Blog</a></li>
+		<li><a href="https://blog.k4jar.com/">K4jar'Blog</a></li>
+        <li><a href="http://111.229.174.209:8000/faq/" id="guize">规则专题</a></li>
+        <li><a href="http://111.229.174.209:8000/api/v1/search?q=1&page=1&type=all&token=3af3c1d5fccad1ca7f3133215f582dec" target="_blank">API&SDK</a></li>
+      </ul>
+      </div></div>
+    <nav class="navbar navbar-default visible-xs" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+            <span class="sr-only">切换导航</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+        </div>
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="library.html">规则列表</a></li>
+            <li><a href="http://m4tir.github.io/">My'Blog</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+</div>
+</div>
+
+
+
+  </div>
+  
+
+<style> body{  background-image:url(imgs/skin1/beijing2.png);}</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 ">
+      <div class="logo_b">
+          <img src="imgs/skin1/logo.png" alt="" width="100%" height="100%">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 parentSelect">
+      <div class="search">
+        <form style="width: 100%;height: 100%;" action='http://111.229.174.209:8000/?q=' id="search_form" name="search_form" method='get' data-no-turbolink="true">
+          <input type="text" class="input1" id="q" name="q" value="" placeholder="app='dedecms' || url='*.edu.cn' || port='6379' || bug = 'xx'" autofocus="true" data-list="domain, host, ip, body, header, title" data-multiple="" data-minchars="1" autocomplete="off">
+        <input type="submit" value="" class="search_tj">
+        </form>
+        <div class="sear_error" style="display:none;">输入错误，请输入正确再查询</div>
+        <div class="select_tip" style="width: 100%;">
+  <ul id="tip_container">
+
+  </ul>
+</div>
+<style>
+  .parentSelect{
+    position: relative;
+  }
+  .select_tip{
+    display: none;
+    position: absolute;
+    height: auto;
+    width: 96%;
+    z-index: 99;
+    border-radius: 6px;
+    border: 1px solid #28fefc;
+    background: #0e1a2c;
+    padding-top: 3px;
+  }
+  .select_tip ul li{
+    width: 99%;
+    color: #fff;
+    margin: 0 auto;
+    padding: 4px 0px 4px 12px;
+
+  }
+  .select_tip ul li:hover{
+    background: #1b2739;
+  }
+  .select_tip ul li a{
+    color: #ffffff;
+  }
+
+  .index_tip {
+    width: ;
+  }
+</style>
+
+
+<script type="text/javascript">
+    // 搜索提示
+    // var timeout = 0
+    // $("#q").keyup(function() {
+    //   var this_ele = $(this)
+    //   clearTimeout(timeout);
+    //   timeout = setTimeout(function () {
+    //     get_search_infos(this_ele);
+    //   }, 400)
+    // });
+
+    $("#q").autocomplete({
+      delay: 500,
+      source: function(request, response){
+        get_search_infos(request)
+      }
+    });
+
+
+
+    var get_search_infos = function (obj) {
+      var ul = $("#tip_container"), vl = obj.term,div = $(".select_tip");
+      div.css('display', 'none');
+      // 如果不包含空格则模糊搜索
+      if(vl.indexOf("=") < 0 && vl.indexOf('"') < 0){
+        $.ajax({
+          type: "GET",
+          contentType: "application/json; charset=utf-8",
+          url: '/search/get_rules?q='+vl,
+          dataType: "json",
+          success: function (data) {
+            var arr = [], list = data.list;
+            if (list.length>0) {
+              for (var i = 0; i < list.length; i++) {
+                var re = new RegExp("" + vl, "g")
+                var product = highlight_str(list[i]["product"], vl)
+                var en_product = highlight_str(list[i]["en_product"], vl)
+                var company = highlight_str(list[i]["company"], vl)
+                var en_company = highlight_str(list[i]["en_company"], vl)
+
+                var product_str = getCnProductName(product, en_product, company)
+                arr.push('<a href="' + list[i]["href"] + '">'+product_str+'</a>')
+                // arr.push('<a href="' + list[i]["href"] + '"><li>' + list[i]["product"].replace(re, '<span style="color: #00a8c6;">' + vl + '</span>') + '——<span>' + list[i]["company"].replace(re, '<span style="color: #00a8c6;">' + vl + '</span>') + '</span></li></a>')
+              }
+              ul.get(0).innerHTML = arr.join('');
+              div.css('display', 'block');
+            } else {
+              div.css('display', 'none');
+            }
+          }
+        });
+      }
+
+    }
+
+    $("body").click(function() {
+      $(".select_tip").css('display', 'none');
+    });
+
+    function highlight_str(str, str2){
+      var re = new RegExp("" + str2, "g")
+      return str.replace(re, '<span style="color: #00a8c6;">' + str2 + '</span>')
+    }
+
+    function getCnProductName(product, en_product, company){
+      str = '<li>' + product
+      if($.trim(en_product).length != 0){
+        str += ' | ' + en_product
+      }
+      str += ' --<span>'+company+'</span></li>'
+      return str
+    }
+
+    function getEnProductName(product, en_product, company, en_company){
+      str = '<li>'
+      if($.trim(en_product).length != 0){
+        str += en_product
+      }else{
+        str += product
+      }
+      str += ' --<span>'
+      if($.trim(en_company).length != 0){
+        str += en_company
+      }else{
+        str += company
+      }
+
+      str += '</span></li>'
+      return str
+
+    }
+  </script>
+      </div>
+
+      <div class="search_txt"><a href="" data-toggle="modal">查询语法</a> <a href="subject.html">规则专题</a>  </div>
+    </div>
+
+  </div>
+
+  <div class="modlist">
+    <div class="row modlist_bg">
+      <div class="col-lg-6 ">
+        <div class="modi">
+          <div class="modi_t">协议排名 </div>
+          <div class="modi_c">
+            <ul id="pro_ul">
+              <li><a href="javascript:void(0)" id="pr_a0">tcpwrapped</a><span id="pr_s0">5925</span></li>
+              <li><a href="javascript:void(0)" id="pr_a1">http</a><span id="pr_s1">1808</span></li>
+              <li><a href="javascript:void(0)" id="pr_a2">https</a><span id="pr_s2">206</span></li>
+              <li><a href="javascript:void(0)" id="pr_a3">http-proxy</a><span id="pr_s3">131</span></li>
+              <li><a href="javascript:void(0)" id="pr_a4">ssh</a><span id="pr_s4">69</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 ">
+
+        <div class="modi">
+          <div class="modi_t">端口排名 </div>
+          <div class="modi_c">
+            <ul>
+              <li><a href="javascript:void(0)" id="po_a0">80</a><span id="po_s0">1690</span></li>
+              <li><a href="javascript:void(0)" id="po_a1">443</a><span id="po_s1">681</span></li>
+              <li><a href="javascript:void(0)" id="po_a2">8080</a><span id="po_s2">400</span></li>
+              <li><a href="javascript:void(0)" id="po_a3">22</a><span id="po_s3">197</span></li>
+              <li><a href="javascript:void(0)" id="po_a4">21</a><span id="po_s4">178</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="ff_total">
+    <div class="total_s1">
+      <div class="i_h1">覆盖服务数量</div>
+      <div class="i_h2" id="service_cnt_div">2474</div>
+    </div>
+    <div class="total_s2">
+      <div class="i_h1">覆盖网站数量</div>
+      <div class="i_h2" id="cnt_div">16081</div>
+    </div>
+    <div class="total_s3">
+      <div class="i_h1">覆盖漏洞数量</div>
+      <div class="i_h2" id="rule_cnt">821</div>
+    </div>
+    <div class="clear"></div>
+
+  </div>
+
+<script type="text/javascript">
+  $(function () {
+
+    $('.search_tj').click(function(e){
+
+      var keyword = $(".input1").val().trim()
+      if(keyword.length === 0 || /^[\*|@|#|\$|\^|\/|\.|\-|\'|\\|\=|\|&|\!|%|^|;|:|\"|\']+$/.test(keyword))
+      {
+        setTimeout(function () {
+          $(".search_list, .search").css('border','2px solid #ff0000');
+        }, 100);
+        setTimeout(function () {
+          $(".search_list, .search").css('border','2px solid #28fefc');
+        }, 200);
+        setTimeout(function () {
+          $(".search_list, .search").css('border','2px solid #ff0000');
+        }, 300);
+        $(".input1").focus();
+
+        $('.sear_error').show();
+        $('.input1').bind('input propertychange', function() {
+          $(".search_list, .search").css('border','2px solid #28fefc');
+          $('.sear_error').hide();
+        });
+        return false;
+      }
+    })
+
+  })
+</script>
+
+
+
+  <div class="modal fade bs-modal-sm" tabindex="1" role="dialog" aria-hidden="true" id="fofa-help-modal" class="modal hide fade in">
+  <div class="modal-dialog modal-lg" style=' z-index:999'>
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h5 class="modal-title text-center" id="myModalLabel">查询语法参考</h5>
+      </div>
+      <div class="modal-body">
+        <div class="well">
+          <p>直接输入查询语句，将从标题，html内容，http头信息，url字段中搜索</p>
+<li>title="abc" 从标题中搜索abc。例：<a target="_blank" href="result-dgl0bgu9iuwml2bs6rci3d.html">标题中有北京的网站</a></li>
+<li>header="abc" 从http头中搜索abc。例：<a target="_blank" href="result-agvhzgvypsjqym9zcyi3d.html">jboss服务器</a></li>
+<li>body="abc" 从html正文中搜索abc。例：<a target="_blank" href="result-ym9ket0isgfja2vkigj5ig3d3.html">正文包含Hacked by</a>
+
+
+<br>
+高级搜索：可以使用括号 和 &amp;&amp; || !=等符号，如<br>
+title="powered by" &amp;&amp; title!=discuz<br>
+title!="powered by" &amp;&amp; body=discuz<br>
+( body="content=\"WordPress" || (header="X-Pingback" &amp;&amp; header="/xmlrpc.php" &amp;&amp; body="/wp-includes/") ) && host="gov.cn" <br>
+新增==完全匹配的符号，可以加快搜索速度，比如查找qq.com所有host，可以是domain=="qq.com"<br>
+关于建站软件的搜索语法请参考：<a href="rules/library.html" target="_blank">组件列表</a><br><br>
+
+<b>注意事项:</b><br>
+* 如果查询表达式有多个与或关系，尽量在外面用（）包含起来<br>
+剩下来，就是发挥你想象力的时候了 ；）
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+</div>
+  <div class="modal-backdrop in" style="display: none;"></div>
+    <div class="bottom" id="footer">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+
+          <dl>
+            <dt>Mstir</dt>
+            <dd>Mail:gududhk666@Gmail.com<dd>
+			<dd>QQ:194634615<dd>
+          </dl>
+
+        </div>
+
+        <div class="col-sm-4 ewm">
+          <dl>
+            <dt>其他</dt>
+            <dd><a href="user/quick_tasks/new.html">提交资产</a></dd>
+          </dl>
+        </div>
+
+      </div>
+      <div class="pull-right" style="font-size: 9pt;margin-top: 8px;">
+        <img src="imgs/flaggif/us.gif"> <a href="en.html">English</a>
+        &nbsp &nbsp<img src="imgs/flaggif/cn.gif"> <a href="zh-cn.html">简体中文</a>
+        zh-CN
+      </div>
+
+      <div class="bootomline">版权所有 © Mstir 2019-2020 Eyes of chaos Version 1.0.0 </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
